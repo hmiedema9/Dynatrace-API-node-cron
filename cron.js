@@ -17,14 +17,14 @@ var job = new CronJob({
     request.post(
       'https://dynatrace-paas.appl.kp.org/e/'+ TENANT_ID + '/api/v1/entity/infrastructure/custom/DataPowerLoadBalancerQA?Api-Token=' + TENANT_TOKEN,
       { json: {
-        "displayName" : "F5 Load Balancer to DataPower QA",
+        "displayName" : "Service Bus QA",
         "ipAddresses" : ["172.20.49.21"],
         "listenPorts" : ["9999"],
         "type" : "F5-LoadBalancer",
         "favicon" : "http://assets.dynatrace.com/global/icons/f5.png",
         "configUrl" : "http://172.20.49.21",
         "tags": ["F5", "DataPower"],
-        "properties" : { "prop1" : "propvalue" }
+        "properties" : { "environment" : "QA" }
       } },
       function (error, response, body) {
           if (!error && response.statusCode == 200) {
