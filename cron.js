@@ -3,10 +3,10 @@ var request = require('request');
 // 'cron' npm package being used for recurring jobs - https://www.npmjs.com/package/cron
 var CronJob = require('cron').CronJob;
 
-// Setup DT variables for API
-var TENANT_ID = "";
+// Setup DT variables for API - grab from env variable needs to be configured
+var TENANT_ID = process.env.TENANT_ID;
 var DT_SAAS = ""; // can be used later for URL manipulation
-var TENANT_TOKEN = "";
+var TENANT_TOKEN = process.env.TENANT_TOKEN;
 
 var job = new CronJob({
   cronTime: '0 0 */2 * *', 
