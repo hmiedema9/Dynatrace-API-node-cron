@@ -12,7 +12,24 @@ var job = new CronJob({
       /* 
        * This job will be run at 00:00 every 2nd day (48 hours)
        */
-    console.log('test cron');
+    request.post(
+      'https://dynatrace-paas.appl.kp.org/e/'+ TENANT_ID + '/api/v1/entity/infrastructure/custom/DataPowerLoadBalancerQA?Api-Token=' + TENANT_TOKEN,
+      { json: {
+        "displayName" : "F5 Load Balancer to DataPower QA",
+        "ipAddresses" : ["172.20.49.21"],
+        "listenPorts" : ["9999"],
+        "type" : "F5-LoadBalancer",
+        "favicon" : "http://assets.dynatrace.com/global/icons/f5.png",
+        "configUrl" : "http://172.20.49.21",
+        "tags": ["F5", "DataPower"],
+        "properties" : { "prop1" : "propvalue" }
+      } },
+      function (error, response, body) {
+          if (!error && response.statusCode == 200) {
+              console.log(body)
+          }
+      }
+    );
   },
   start: false,
   timeZone: 'America/Los_Angeles'
