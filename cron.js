@@ -1,4 +1,6 @@
+//Request library being used currently for making POST requests for custom device API
 var request = require('request');
+// 'cron' npm package being used for recurring jobs - https://www.npmjs.com/package/cron
 var CronJob = require('cron').CronJob;
 
 // Setup DT variables for API
