@@ -1,0 +1,10 @@
+{
+  "displayName" : "F5 Load Balancer to DataPower QA",
+  "ipAddresses" : ["172.20.49.21"],
+  "listenPorts" : ["9999"],
+  "type" : "F5-LoadBalancer",
+  "favicon" : "http://assets.dynatrace.com/global/icons/f5.png",
+  "configUrl" : "http://172.20.49.21",
+  "tags": ["F5", "DataPower"],
+  "properties" : { "environment" : "QA" }
+}
